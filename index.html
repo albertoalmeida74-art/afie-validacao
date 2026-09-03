@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>Validação de Documento | AFIE</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -29,9 +31,11 @@
       max-width: 520px;
       background: #ffffff;
       border-radius: 10px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
       overflow: hidden;
     }
+
+    /* CABEÇALHO */
 
     .header {
       background: #17212b;
@@ -40,36 +44,42 @@
       padding: 28px 20px;
     }
 
-    .logo {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* LOGO */
 
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-}
+    .logo {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
     .header h1 {
       font-size: 18px;
+      line-height: 1.4;
       letter-spacing: 0.5px;
     }
 
     .header p {
       font-size: 12px;
-      margin-top: 6px;
+      margin-top: 7px;
       opacity: 0.8;
     }
+
+    /* CONTEÚDO */
 
     .content {
       padding: 30px 25px;
     }
+
+    /* STATUS */
 
     .status {
       text-align: center;
@@ -92,10 +102,13 @@
     }
 
     .status p {
-      margin-top: 6px;
+      margin-top: 7px;
       font-size: 13px;
       color: #4d5b52;
+      line-height: 1.4;
     }
+
+    /* INFORMAÇÕES */
 
     .info {
       border-top: 1px solid #ddd;
@@ -104,6 +117,7 @@
     .row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
       padding: 14px 5px;
       border-bottom: 1px solid #e5e5e5;
@@ -120,6 +134,8 @@
       text-align: right;
     }
 
+    /* AVISO */
+
     .notice {
       margin-top: 25px;
       padding: 15px;
@@ -130,13 +146,18 @@
       color: #555;
     }
 
+    /* RODAPÉ */
+
     .footer {
       text-align: center;
       padding: 18px;
       background: #f4f5f6;
       font-size: 11px;
+      line-height: 1.5;
       color: #737b82;
     }
+
+    /* DOCUMENTO INVÁLIDO */
 
     .invalid {
       background: #fff0f0;
@@ -150,112 +171,268 @@
     .invalid h2 {
       color: #9b2222;
     }
+
+    /* CELULAR */
+
+    @media (max-width: 480px) {
+
+      body {
+        padding: 10px;
+      }
+
+      .content {
+        padding: 25px 18px;
+      }
+
+      .header {
+        padding: 25px 15px;
+      }
+
+      .logo {
+        width: 90px;
+        height: 90px;
+      }
+
+      .header h1 {
+        font-size: 16px;
+      }
+
+      .row {
+        align-items: flex-start;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
   <div class="container">
 
+    <!-- CABEÇALHO -->
+
     <header class="header">
 
-     <div class="logo">
-  <img src="logo-afie.png" alt="Logotipo AFIE">
-</div>
+      <div class="logo">
 
-      <h1>AGÊNCIA FICTÍCIA DE INTELIGÊNCIA ESTRATÉGICA</h1>
+        <img
+          src="logo-afie.png"
+          alt="Logotipo da Agência Fictícia de Inteligência Estratégica"
+        >
 
-      <p>Sistema de Validação Documental</p>
+      </div>
+
+      <h1>
+        AGÊNCIA FICTÍCIA DE INTELIGÊNCIA ESTRATÉGICA
+      </h1>
+
+      <p>
+        Sistema de Validação Documental
+      </p>
 
     </header>
 
+
+    <!-- CONTEÚDO -->
+
     <main class="content">
+
+
+      <!-- STATUS -->
 
       <section class="status" id="status">
 
-        <div class="check">✓</div>
+        <div class="check">
+          ✓
+        </div>
 
-        <h2>DOCUMENTO AUTENTICADO</h2>
+        <h2>
+          DOCUMENTO AUTENTICADO
+        </h2>
 
-        <p>O código informado corresponde a um documento válido.</p>
+        <p>
+          O código informado corresponde a um documento válido.
+        </p>
 
       </section>
+
+
+      <!-- DADOS DO DOCUMENTO -->
 
       <section class="info">
 
-        <div class="row">
-          <span class="label">Órgão</span>
-          <span class="value">AFIE</span>
-        </div>
 
         <div class="row">
-          <span class="label">Documento</span>
-          <span class="value">Pedido de Busca nº 014/2026</span>
+
+          <span class="label">
+            Órgão
+          </span>
+
+          <span class="value">
+            AFIE
+          </span>
+
         </div>
 
-        <div class="row">
-          <span class="label">Código de validação</span>
-          <span class="value" id="codigo">AFIE-PB014-2026</span>
-        </div>
 
         <div class="row">
-          <span class="label">Data de emissão</span>
-          <span class="value">02/09/2026</span>
+
+          <span class="label">
+            Documento
+          </span>
+
+          <span class="value">
+            Pedido de Busca nº 014/2026
+          </span>
+
         </div>
 
-        <div class="row">
-          <span class="label">Classificação</span>
-          <span class="value">RESTRITO</span>
-        </div>
 
         <div class="row">
-          <span class="label">Natureza</span>
-          <span class="value">Exercício Acadêmico</span>
+
+          <span class="label">
+            Código de validação
+          </span>
+
+          <span
+            class="value"
+            id="codigo"
+          >
+            AFIE-PB014-2026
+          </span>
+
         </div>
+
+
+        <div class="row">
+
+          <span class="label">
+            Data de emissão
+          </span>
+
+          <span class="value">
+            02/09/2026
+          </span>
+
+        </div>
+
+
+        <div class="row">
+
+          <span class="label">
+            Classificação
+          </span>
+
+          <span class="value">
+            RESTRITO
+          </span>
+
+        </div>
+
+
+        <div class="row">
+
+          <span class="label">
+            Natureza
+          </span>
+
+          <span class="value">
+            Exercício Acadêmico
+          </span>
+
+        </div>
+
 
       </section>
 
+
+      <!-- AVISO -->
+
       <div class="notice">
+
         <strong>ATENÇÃO:</strong><br>
+
         Este sistema integra exclusivamente um exercício acadêmico.
         A Agência Fictícia de Inteligência Estratégica – AFIE,
-        bem como o documento e os dados apresentados nesta página,
-        são integralmente fictícios e não possuem validade oficial.
+        o documento e os dados apresentados nesta página são
+        integralmente fictícios e não possuem validade oficial.
+
       </div>
+
 
     </main>
 
+
+    <!-- RODAPÉ -->
+
     <footer class="footer">
+
       AFIE – Sistema Fictício de Validação Documental<br>
+
       © 2026 – Exercício Acadêmico
+
     </footer>
+
 
   </div>
 
+
+  <!-- SISTEMA DE VALIDAÇÃO -->
+
   <script>
 
-    const params = new URLSearchParams(window.location.search);
-    const codigo = params.get("codigo");
-
+    // Código oficial do exercício
     const codigoValido = "AFIE-PB014-2026";
 
-    if (codigo && codigo !== codigoValido) {
+    // Captura o código presente na URL
+    const parametros = new URLSearchParams(window.location.search);
 
-      const status = document.getElementById("status");
+    const codigoRecebido = parametros.get("codigo");
 
-      status.classList.add("invalid");
+    // Elementos da página
+    const status = document.getElementById("status");
+    const campoCodigo = document.getElementById("codigo");
 
-      status.innerHTML = `
-        <div class="check">✕</div>
-        <h2>DOCUMENTO NÃO VALIDADO</h2>
-        <p>O código informado não corresponde a um registro válido.</p>
-      `;
 
-      document.getElementById("codigo").textContent = codigo;
+    // Se houver um código na URL
+    if (codigoRecebido) {
+
+      // Mostra o código recebido
+      campoCodigo.textContent = codigoRecebido;
+
+
+      // Verifica se o código é válido
+      if (codigoRecebido !== codigoValido) {
+
+        status.classList.add("invalid");
+
+        status.innerHTML = `
+        
+          <div class="check">
+            ✕
+          </div>
+
+          <h2>
+            DOCUMENTO NÃO VALIDADO
+          </h2>
+
+          <p>
+            O código informado não corresponde
+            a um registro válido.
+          </p>
+
+        `;
+
+      }
 
     }
 
   </script>
 
+
 </body>
+
 </html>
