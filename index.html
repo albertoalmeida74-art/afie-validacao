@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Validação de Documento | AFIE</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef1f4;
+      color: #20252b;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    .header {
+      background: #17212b;
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 15px;
+      border: 2px solid #c9a44c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #c9a44c;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .header p {
+      font-size: 12px;
+      margin-top: 6px;
+      opacity: 0.8;
+    }
+
+    .content {
+      padding: 30px 25px;
+    }
+
+    .status {
+      text-align: center;
+      padding: 18px;
+      background: #eaf7ee;
+      border: 1px solid #a8d8b5;
+      border-radius: 7px;
+      margin-bottom: 25px;
+    }
+
+    .status .check {
+      font-size: 38px;
+      color: #218838;
+      margin-bottom: 8px;
+    }
+
+    .status h2 {
+      color: #176b2c;
+      font-size: 20px;
+    }
+
+    .status p {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #4d5b52;
+    }
+
+    .info {
+      border-top: 1px solid #ddd;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 5px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .label {
+      color: #68717a;
+      font-size: 13px;
+    }
+
+    .value {
+      font-weight: bold;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 15px;
+      background: #f7f7f7;
+      border-left: 4px solid #c9a44c;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 18px;
+      background: #f4f5f6;
+      font-size: 11px;
+      color: #737b82;
+    }
+
+    .invalid {
+      background: #fff0f0;
+      border-color: #e0aaaa;
+    }
+
+    .invalid .check {
+      color: #b52b2b;
+    }
+
+    .invalid h2 {
+      color: #9b2222;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+
+      <div class="logo">
+        AFIE
+      </div>
+
+      <h1>AGÊNCIA FICTÍCIA DE INTELIGÊNCIA ESTRATÉGICA</h1>
+
+      <p>Sistema de Validação Documental</p>
+
+    </header>
+
+    <main class="content">
+
+      <section class="status" id="status">
+
+        <div class="check">✓</div>
+
+        <h2>DOCUMENTO AUTENTICADO</h2>
+
+        <p>O código informado corresponde a um documento válido.</p>
+
+      </section>
+
+      <section class="info">
+
+        <div class="row">
+          <span class="label">Órgão</span>
+          <span class="value">AFIE</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Documento</span>
+          <span class="value">Pedido de Busca nº 014/2026</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Código de validação</span>
+          <span class="value" id="codigo">AFIE-PB014-2026</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Data de emissão</span>
+          <span class="value">02/09/2026</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Classificação</span>
+          <span class="value">RESTRITO</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Natureza</span>
+          <span class="value">Exercício Acadêmico</span>
+        </div>
+
+      </section>
+
+      <div class="notice">
+        <strong>ATENÇÃO:</strong><br>
+        Este sistema integra exclusivamente um exercício acadêmico.
+        A Agência Fictícia de Inteligência Estratégica – AFIE,
+        bem como o documento e os dados apresentados nesta página,
+        são integralmente fictícios e não possuem validade oficial.
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      AFIE – Sistema Fictício de Validação Documental<br>
+      © 2026 – Exercício Acadêmico
+    </footer>
+
+  </div>
+
+  <script>
+
+    const params = new URLSearchParams(window.location.search);
+    const codigo = params.get("codigo");
+
+    const codigoValido = "AFIE-PB014-2026";
+
+    if (codigo && codigo !== codigoValido) {
+
+      const status = document.getElementById("status");
+
+      status.classList.add("invalid");
+
+      status.innerHTML = `
+        <div class="check">✕</div>
+        <h2>DOCUMENTO NÃO VALIDADO</h2>
+        <p>O código informado não corresponde a um registro válido.</p>
+      `;
+
+      document.getElementById("codigo").textContent = codigo;
+
+    }
+
+  </script>
+
+</body>
+</html>
